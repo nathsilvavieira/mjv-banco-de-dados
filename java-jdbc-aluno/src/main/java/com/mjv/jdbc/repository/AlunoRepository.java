@@ -10,7 +10,8 @@ import com.mjv.jdbc.util.FabricaConexao;
 public class AlunoRepository {
 	//padrao CRUD
 	//Results
-	
+
+	//grava aluno no banco
 	public void gravar(Aluno aluno) {
 		try {
 			FabricaConexao.abrirConexao();
@@ -43,7 +44,7 @@ public class AlunoRepository {
 		}
 	}
 
-
+   //lista aluno que estão no banco de dados
 	public void listarAlunos(){
 
 		try{
@@ -71,7 +72,7 @@ public class AlunoRepository {
 	}
 
 	}
-
+	//busca de aluno por id, retorna um objeto aluno
     public Aluno buscarAluno(int id){
 
         Aluno aluno = null;
@@ -113,21 +114,15 @@ public class AlunoRepository {
 			FabricaConexao.abrirConexao();
 			Connection connection = FabricaConexao.getConexao();
 
-			String sql = ("SELECT * FROM tab_aluno");
 			String sql2 = ("DELETE from tab_aluno where id = ?");
 
-			PreparedStatement procedimentoSql = connection.prepareStatement(sql);
 			PreparedStatement procedimentoSql2 = connection.prepareStatement(sql2);
-			ResultSet result  = procedimentoSql.executeQuery(sql);
-			if(result.next())
-				aluno.setIdAluno(result.getInt("id"));
 
 			procedimentoSql2.setInt(1, aluno.getIdAluno());
-
+			// executando o delete
 			procedimentoSql2.execute();
 			System.out.println("Exclusão realizada com sucesso");
 
-			procedimentoSql.close();
 			procedimentoSql2.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -144,15 +139,12 @@ public class AlunoRepository {
 			FabricaConexao.abrirConexao();
 			Connection connection = FabricaConexao.getConexao();
 
-			String sql = ("SELECT * FROM tab_aluno");
+
 			String sql2 = ("update tab_aluno set nome = ?, altura = ?, sexo = ?, ativo = ? where id = ?");
 
 
-			PreparedStatement procedimentoSql = connection.prepareStatement(sql);
+
 			PreparedStatement procedimentoSql2 = connection.prepareStatement(sql2);
-			ResultSet result  = procedimentoSql.executeQuery(sql);
-			if(result.next())
-			aluno.setIdAluno(result.getInt("id"));
 
 			procedimentoSql2.setString(1, aluno.getNome());
 			if(aluno.getAltura()==null)
@@ -164,11 +156,11 @@ public class AlunoRepository {
 			procedimentoSql2.setBoolean(4, aluno.isAtivo());
 			procedimentoSql2.setInt(5, aluno.getIdAluno());
 
-
+			//executando o procedimento de alterar
 			procedimentoSql2.execute();
 
 			System.out.println("Alteração realizada com sucesso");
-			procedimentoSql.close();
+
 			procedimentoSql2.close();
 		} catch (Exception e) {
 			e.printStackTrace();
