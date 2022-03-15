@@ -12,6 +12,7 @@ public class MusicaJpaRepository {
 
     private EntityManager em;
 
+
     public MusicaJpaRepository(){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Musicas");
         em = entityManagerFactory.createEntityManager();

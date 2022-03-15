@@ -9,7 +9,9 @@ import java.util.List;
 public class PlaylistApp {
 public static void main(String[]args) {
 
+try{
 
+    //instanciando a classe entitymanager atráves do construtor do jpa repository
     MusicaJpaRepository mjr = new MusicaJpaRepository();
 /*
     Musica musica = new Musica();
@@ -82,17 +84,20 @@ public static void main(String[]args) {
     mjr.save(musica4);
     mjr.save(musica5);
     mjr.save(musica6);
-*/
 
+
+    //busca por musicas por artista/album/genero
+/*
     List<Musica> playlist = mjr.findAll("Djonga");
     for (Musica m: playlist){
         System.out.println("----------------------");
         System.out.println(m.getNome());
     }
         System.out.println("----------------------");
-
-
-
+*/
+    } catch (Exception e){
+        e.printStackTrace();
+    }
 
 }
 }
