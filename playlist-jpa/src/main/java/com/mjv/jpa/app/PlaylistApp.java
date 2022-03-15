@@ -85,7 +85,7 @@ try{
     musica7.setCompositor("Nando Reis");
     musica7.setGenero("MPB");
     musica7.setInternacional(false);
-
+//teste
     //realizando registros
     /*
     mjr.save(musica);
