@@ -14,7 +14,7 @@ public class MusicaJpaRepository {
 
 
     public MusicaJpaRepository(){
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Musicas");
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Musicas-PU");
         em = entityManagerFactory.createEntityManager();
     }
 
@@ -22,6 +22,7 @@ public class MusicaJpaRepository {
         em.getTransaction().begin();
         //operação a ser realizada
         em.persist(musica);
+
         //---------------------------
         em.getTransaction().commit();
     }

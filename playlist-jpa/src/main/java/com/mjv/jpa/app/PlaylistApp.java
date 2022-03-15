@@ -13,7 +13,7 @@ try{
 
     //instanciando a classe entitymanager atráves do construtor do jpa repository
     MusicaJpaRepository mjr = new MusicaJpaRepository();
-/*
+
     Musica musica = new Musica();
     musica.setNome("Oceans");
     musica.setAlbum("Tell Me It's Real");
@@ -77,6 +77,17 @@ try{
     musica6.setGenero("Rap Nacional");
     musica6.setInternacional(false);
 
+    Musica musica7 = new Musica();
+    musica7.setNome("All Star");
+    musica7.setAlbum("Nando Reis - Voz e Violao - No Recreio");
+    musica7.setArtista("Nando Reis");
+    musica7.setDuracao(3.47);
+    musica7.setCompositor("Nando Reis");
+    musica7.setGenero("MPB");
+    musica7.setInternacional(false);
+
+    //realizando registros
+    /*
     mjr.save(musica);
     mjr.save(musica1);
     mjr.save(musica2);
@@ -84,17 +95,18 @@ try{
     mjr.save(musica4);
     mjr.save(musica5);
     mjr.save(musica6);
-
+    mjr.save(musica7);
+*/
 
     //busca por musicas por artista/album/genero
-/*
-    List<Musica> playlist = mjr.findAll("Djonga");
+
+    List<Musica> playlist = mjr.findAll("Rap nacional");
     for (Musica m: playlist){
         System.out.println("----------------------");
         System.out.println(m.getNome());
     }
         System.out.println("----------------------");
-*/
+
     } catch (Exception e){
         e.printStackTrace();
     }
