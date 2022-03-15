@@ -9,19 +9,18 @@ public class Musica {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "nome")
+    @Column(length = 80, nullable = false)
     private String nome;
-    @Column(name = "genero")
+    @Column(length = 80, nullable = false)
     private String genero;
-    @Column(name = "duracao")
+    @Column(precision = 4, scale = 2, nullable = false)
     private double duracao;
-    @Column(name = "artista")
+    @Column(length = 80, nullable = false)
     private String artista;
-    @Column(name = "compositor")
+    @Column(length = 80, nullable = false)
     private String compositor;
-    @Column(name = "album")
-    private String album; //pode ser null
-    @Column(name = "internacional")
+    @Column(length = 80)
+    private String album;
     private boolean internacional;
 
     public String getNome() {
