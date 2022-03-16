@@ -87,13 +87,13 @@ try{
     musica7.setInternacional(false);
 
     Musica musica8= new Musica();
-    musica7.setNome("With or Without You");
-    musica7.setAlbum("The Joshua Tree");
-    musica7.setArtista("U2");
-    musica7.setDuracao(4.56);
-    musica7.setCompositor("Bono");
-    musica7.setGenero("Rock");
-    musica7.setInternacional(true);
+    musica8.setNome("With or Without You");
+    musica8.setAlbum("The Joshua Tree");
+    musica8.setArtista("U2");
+    musica8.setDuracao(4.56);
+    musica8.setCompositor("Bono");
+    musica8.setGenero("Rock");
+    musica8.setInternacional(true);
     
 //teste
     //realizando registros
